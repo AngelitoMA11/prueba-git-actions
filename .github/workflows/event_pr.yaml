@@ -4,8 +4,12 @@ on:
   pull_request:
     labels: 
       - 'test'
-
+           
 jobs:
+  steps:
+    steps:
+      - name: Checkout Code 
+        uses: actions/checkout@v4
   hello_world:
     runs-on: ubuntu-latest
     
