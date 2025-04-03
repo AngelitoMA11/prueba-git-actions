@@ -1,1 +1,33 @@
 name : Second Action
+
+on:
+  push:
+    branches: 
+      - main
+  workflow_dispatch:
+    inputs:
+      debug:
+        type: boolean
+        description: Debug
+        required: false
+        default: false
+      sample_value:
+        type: string
+        description: Sample Value
+        required: true
+        default: ''
+
+jobs: 
+  hello-words:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: First Step 
+        run: echo "Hello World!"
+  bye-worlds:
+    runs-on: ubuntu-latest
+    steps:
+      - name: First Step 
+        run: echo "Hello World!"
+      - name: Step 2
+        run: echo ${{ github.event.inputs.sample_value }}
