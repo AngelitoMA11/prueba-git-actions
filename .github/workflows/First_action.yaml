@@ -5,12 +5,12 @@ on:
     inputs:
       debug:
         type: boolean
-        description: 'Debug'
+        description: Debug
         required: false
         default: false
-    sample_value:
+      sample_value:
         type: string
-        description: 'Sample Value'
+        description: Sample Value
         required: true
         default: ''
 
